@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Ensure the requested file or directory exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite API requests to restful_api_with_pdo.php
+RewriteRule ^api/resources$ restful_api_with_pdo.php [QSA,L]
+RewriteRule ^api/resources/([0-9]+)$ restful_api_with_pdo.php [QSA,L]
