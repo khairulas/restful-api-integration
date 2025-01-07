@@ -5,7 +5,7 @@ $response = json_decode(file_get_contents("$apiUrl/$id"), true);
 $resource = $response['data'] ?? [];
 
 // NYT Book Review API Integration
-$nytApiKey = "8eAWpTFZd7AGEkFYGmRIDih5t89NR1w7"; // Replace with your NYT API key
+$nytApiKey = "[NYT API KEY]"; // Replace with your NYT API key
 $nytBooksUrl = "https://api.nytimes.com/svc/books/v3/reviews.json?title=" . urlencode($resource['name']) . "&api-key=$nytApiKey";
 $nytResponse = json_decode(file_get_contents($nytBooksUrl), true);
 $nytReviews = $nytResponse['results'] ?? [];
