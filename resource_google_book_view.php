@@ -5,7 +5,7 @@ $response = json_decode(file_get_contents("$apiUrl/$id"), true);
 $resource = $response['data'] ?? [];
 
 // Google Books API Integration
-$googleApiKey = "AIzaSyDD6XpRuE0dJSDMGqf-a2m9-SPHvM3EGbE"; // Replace with your API key
+$googleApiKey = "[Google API KEY]"; // Replace with your API key
 $googleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=" . urlencode($resource['name']);
 $googleResponse = json_decode(file_get_contents($googleBooksUrl), true);
 $googleBooks = $googleResponse['items'] ?? [];
